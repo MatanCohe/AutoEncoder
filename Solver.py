@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 
 import tqdm
 
-import autoencoder
+import autoencoders
 
 
 def train(model, train_loader, num_epochs,
@@ -91,7 +91,7 @@ def main():
         train_dataset, batch_size=batch_size, shuffle=True)
 
     DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model = autoencoder.AutoEncoder().to(DEVICE)
+    model = autoencoders.AutoEncoder().to(DEVICE)
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(),
                            lr=learning_rate,
