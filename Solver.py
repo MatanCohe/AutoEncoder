@@ -108,7 +108,7 @@ def main():
     test_loss = test(model, test_loader, criterion, DEVICE)
     print(np.mean(test_loss))
 
-    torch.save(model.state_dict(), './saved_models/MNIST_AutoEncoder.pth')
+    torch.save(model.state_dict(), './saved_models/MNIST_ConvAutoEncoder.pth')
 
 
 if __name__ == '__main__':
